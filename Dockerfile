@@ -13,6 +13,7 @@ RUN apt-get update --yes --quiet && \
  curl \
  libapache2-mod-php5 \
  nginx \
+ patch \
  php5 \
  php5-curl \
  php5-fpm \
@@ -32,6 +33,8 @@ RUN curl -L -o /tmp/restyaboard.zip https://github.com/RestyaPlatform/board/rele
 
 # setting app
 WORKDIR /usr/share/nginx/html
+COPY fixes_710-711-715.patch ./
+RUN patch --binary -p1 < fixes_710-711-715.patch
 RUN cp -R media /tmp/ \
         && cp restyaboard.conf /etc/nginx/conf.d \
         && sed -i 's/^.*listen.mode = 0660$/listen.mode = 0660/' /etc/php5/fpm/pool.d/www.conf \
