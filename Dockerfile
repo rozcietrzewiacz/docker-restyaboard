@@ -28,7 +28,7 @@ RUN echo "postfix postfix/mailname string example.com" | debconf-set-selections 
 
 # deploy app
 RUN curl -L -o /tmp/restyaboard.zip https://github.com/RestyaPlatform/board/releases/download/${restyaboard_version}/board-${restyaboard_version}.zip \
-        && unzip /tmp/restyaboard.zip -d /usr/share/nginx/html \
+        && unzip -q /tmp/restyaboard.zip -d /usr/share/nginx/html \
         && rm /tmp/restyaboard.zip
 
 # setting app
