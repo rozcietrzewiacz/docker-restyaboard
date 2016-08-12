@@ -1,5 +1,5 @@
 data:
-  image: busybox
+  image: armbuild/busybox
   volumes:
     - /usr/share/elasticsearch/data
     - /var/lib/postgresql/data
@@ -8,13 +8,13 @@ data:
   restart: always
 
 elasticsearch:
-  image: elasticsearch
+  image: armbuild/dockerfile-elasticsearch
   volumes_from:
     - data
   restart: always
 
 postgres:
-  image: postgres
+  image: armbuild/training-postgres
   environment:
     POSTGRES_USER: postgres
     POSTGRES_PASSWORD: something

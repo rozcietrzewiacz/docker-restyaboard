@@ -1,4 +1,4 @@
-FROM debian:wheezy-backports
+FROM armbuild/debian:wheezy
 
 ARG TERM=linux
 ARG DEBIAN_FRONTEND=noninteractive
