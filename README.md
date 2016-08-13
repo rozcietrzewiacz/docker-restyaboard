@@ -1,7 +1,7 @@
-Docker Restyaboard
+Docker Restyaboard for ARM
 ==============================
 
-Build Restyaboard in Docker.
+This is an adaptation of [namikingsoft's docker-restyaboard repo](https://github.com/namikingsoft/docker-restyaboard) for armhf architecture.
 
 * Restyaboard  
   http://restya.com/board/
@@ -16,7 +16,7 @@ Quick Start
 Build image and Run container using docker-compose.
 
 ``` bash
-git clone https://github.com/namikingsoft/docker-restyaboard.git
+git clone https://github.com/rozcietrzewiacz/docker-restyaboard-arm.git
 cd docker-restyaboard
 
 docker-compose up -d
